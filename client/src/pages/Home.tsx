@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from "react";
 import { ArrowUpRight, Menu, X, Mail, MapPin, Phone, Github, Linkedin, Check, Download, Calendar, Building2, Briefcase, Copy } from "lucide-react";
 
+const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 const EMAIL_ADDRESS = "ponmanikavelmuruganai.ds@gmail.com";
 const GMAIL_COMPOSE_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL_ADDRESS}`;
 
@@ -86,15 +88,15 @@ const educationList = [
 const certificates = [
   {
     name: "SQL Hiring Secrets – NoviTech R&D",
-    image: "/certificates/sql-hiring-secrets.png",
+    image: assetUrl("certificates/sql-hiring-secrets.png"),
   },
   {
     name: "Data Analytics MasterClass – NoviTech R&D",
-    image: "/certificates/data-analytics.png",
+    image: assetUrl("certificates/data-analytics.png"),
   },
   {
     name: "Oracle Certified Foundations Associate",
-    image: "/certificates/oracle-certified.png",
+    image: assetUrl("certificates/oracle-certified.png"),
   },
 ];
 
@@ -235,7 +237,7 @@ export default function Home() {
       {/* ── HEADER ── */}
       <header className={`site-header${scrolled ? " scrolled" : ""}`}>
         <a className="brand" href="#top" onClick={closeMenu} aria-label="Ponmanikavel Murugan home">
-          <img src="/logo.png" alt="SMP Logo" />
+          <img src={assetUrl("logo.png")} alt="SMP Logo" />
           <span><strong>PONMANIKAVEL</strong><small>MURUGAN / DEVELOPER</small></span>
         </a>
         <nav className={menuOpen ? "main-nav is-open" : "main-nav"} aria-label="Primary navigation">
@@ -320,7 +322,7 @@ export default function Home() {
               <div className="portrait-ring ring-1" />
               <div className="portrait-ring ring-2" />
               <div className="portrait-glow" />
-              <img src="/portrait.png" alt="Ponmanikavel Murugan portrait" />
+              <img src={assetUrl("portrait.png")} alt="Ponmanikavel Murugan portrait" />
               <div className="art-caption">Based in<br /><strong>Tamil Nadu, IN</strong></div>
               <div className="portrait-badge">
                 <span>Available</span>
@@ -675,7 +677,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="footer-top">
           <a className="brand" href="#top">
-            <img src="/logo.png" alt="SMP Logo" />
+            <img src={assetUrl("logo.png")} alt="SMP Logo" />
             <span><strong>PONMANIKAVEL</strong><small>MURUGAN / DEVELOPER</small></span>
           </a>
           <div className="footer-links">
